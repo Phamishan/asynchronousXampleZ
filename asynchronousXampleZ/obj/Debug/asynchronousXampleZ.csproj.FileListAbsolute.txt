@@ -1,0 +1,8 @@
+C:\Users\phami\source\repos\asynchronousXampleZ\asynchronousXampleZ\bin\Debug\asynchronousXampleZ.exe.config
+C:\Users\phami\source\repos\asynchronousXampleZ\asynchronousXampleZ\bin\Debug\asynchronousXampleZ.exe
+C:\Users\phami\source\repos\asynchronousXampleZ\asynchronousXampleZ\bin\Debug\asynchronousXampleZ.pdb
+C:\Users\phami\source\repos\asynchronousXampleZ\asynchronousXampleZ\obj\Debug\asynchronousXampleZ.csproj.AssemblyReference.cache
+C:\Users\phami\source\repos\asynchronousXampleZ\asynchronousXampleZ\obj\Debug\asynchronousXampleZ.csproj.SuggestedBindingRedirects.cache
+C:\Users\phami\source\repos\asynchronousXampleZ\asynchronousXampleZ\obj\Debug\asynchronousXampleZ.csproj.CoreCompileInputs.cache
+C:\Users\phami\source\repos\asynchronousXampleZ\asynchronousXampleZ\obj\Debug\asynchronousXampleZ.exe
+C:\Users\phami\source\repos\asynchronousXampleZ\asynchronousXampleZ\obj\Debug\asynchronousXampleZ.pdb
