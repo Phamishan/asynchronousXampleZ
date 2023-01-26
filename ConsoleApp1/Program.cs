@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ConsoleApp1
 {
@@ -15,55 +16,37 @@ namespace ConsoleApp1
     {
         static async Task Main(string[] args) 
         {
-            tankBil Bil = gasstation();
-            Console.WriteLine("Bil is tanket");
+            var tankTask = tankBil();
+            var pølseTask = pølseKøb();
 
-            stoevsugeBil bilInt = await suger();
-            findSF(bilInt);
-
-            Console.WriteLine("Færdig");
-            
-            koebeHotdog hotdog = spisHD();
-            Console.WriteLine("Nom nom nom, hotdog is spiset");
-            
-            
-            snakke samtale = newFriend();
-            Console.WriteLine("Hej med dig jeg hedder Kaj");
+            Task.WaitAll(tankTask, pølseTask);
         }
 
-        private static tankBil gasstation()
+        static async Task tankBil()
         {
-            Console.WriteLine("Tanker bil");
-            return new tankBil();
+            Console.WriteLine("Tanking startet");
+            await awaitForSec(5);
+            Console.WriteLine("Tanking sluttet");
         }
 
-        private static void findSF(stoevsugeBil bilInt)
+        static async Task pølseKøb()
         {
-            Console.WriteLine("Wwwwww");
-            Task.Delay(3000).Wait();
-        }
-        private static stoevsugeBil suger()
-        {
-            Console.WriteLine("Finder støvsuger");
-            Task.Delay(1000).Wait();
-            Console.WriteLine("Start støvsuger");
-            Task.Delay(3000).Wait();
-            return new stoevsugeBil();
+            Console.WriteLine("Bestilt pølse");
+            await awaitForSec(2);
+            Console.WriteLine("Pølse modtaget");
         }
 
-        private static koebeHotdog spisHD()
+        static async Task awaitForSec(int s)
         {
-            Console.WriteLine("Køber hotdog");
-            Task.Delay(3000).Wait();
-            return new koebeHotdog();
-        }
+            await Task.Run(() =>
+            {
+                Console.WriteLine($"test: {Thread.CurrentThread.ManagedThreadId}");
+                var endTime1 = DateTime.Now.AddSeconds(s);
+                while (DateTime.Now < endTime1)
+                {
 
-        private static snakke newFriend()
-        {
-            Console.WriteLine("Hej med dig Kaj, samtale is snakket");
-            Task.Delay(3000).Wait();
-            return new snakke();
+                }
+            });
         }
-
     }
 }
